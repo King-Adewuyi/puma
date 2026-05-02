@@ -24,7 +24,7 @@ st.set_page_config(
 
 # ── Default: LIGHT mode ───────────────────────────────────────────
 if "dark_mode" not in st.session_state:
-    st.session_state.dark_mode = False          # light is default
+    st.session_state.dark_mode = False
 
 def toggle_theme():
     st.session_state.dark_mode = not st.session_state.dark_mode
@@ -166,53 +166,29 @@ html,body,[class*="css"]{{
     background:{bg_main} !important;
     color:{body_text};
 }}
-
-/* ─── Sidebar ──────────────────────────────────── */
 section[data-testid="stSidebar"]{{
     background:{bg_sidebar} !important;
     border-right:1px solid {bdr};
     width:230px !important;
 }}
 section[data-testid="stSidebar"] *{{color:{sidebar_text} !important;}}
-
-/* Remove the "Navigate" / hidden radio label entirely */
-section[data-testid="stSidebar"] .stRadio > label{{
-    display:none !important;
-}}
-/* Nav items — equal height, full width, balanced */
+section[data-testid="stSidebar"] .stRadio > label{{display:none !important;}}
 section[data-testid="stSidebar"] .stRadio > div{{
-    gap:6px !important;
-    display:flex !important;
-    flex-direction:column !important;
-    width:100% !important;
+    gap:6px !important;display:flex !important;
+    flex-direction:column !important;width:100% !important;
 }}
 section[data-testid="stSidebar"] .stRadio > div > label{{
-    display:flex !important;
-    align-items:center !important;
-    padding:13px 16px !important;
-    border-radius:10px !important;
-    font-size:0.88rem !important;
-    font-weight:600 !important;
-    background:{sidebar_pill} !important;
-    border:1px solid {sidebar_pill_bdr} !important;
-    cursor:pointer !important;
-    min-height:48px !important;
-    width:100% !important;
-    margin:0 !important;
-    transition:border-color 0.18s ease !important;
+    display:flex !important;align-items:center !important;
+    padding:13px 16px !important;border-radius:10px !important;
+    font-size:0.88rem !important;font-weight:600 !important;
+    background:{sidebar_pill} !important;border:1px solid {sidebar_pill_bdr} !important;
+    cursor:pointer !important;min-height:48px !important;
+    width:100% !important;margin:0 !important;transition:border-color 0.18s ease !important;
 }}
 section[data-testid="stSidebar"] .stRadio > div > label:hover{{
-    border-color:{hero_accent} !important;
-    background:{badge_bg} !important;
+    border-color:{hero_accent} !important;background:{badge_bg} !important;
 }}
-
-/* ─── Main ─────────────────────────────────────── */
-.main .block-container{{
-    max-width:1200px;
-    padding:2rem 2.5rem 4rem 2.5rem !important;
-}}
-
-/* ─── Brand ────────────────────────────────────── */
+.main .block-container{{max-width:1200px;padding:2rem 2.5rem 4rem 2.5rem !important;}}
 .brand-wrap{{padding:1.8rem 0 1.4rem 0;}}
 .brand-icon{{
     width:40px;height:40px;
@@ -229,8 +205,6 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
     font-size:0.58rem;color:{muted_text};letter-spacing:3px;
     text-transform:uppercase;margin-top:4px;font-weight:600;
 }}
-
-/* ─── Hero ─────────────────────────────────────── */
 .page-hero{{padding:3rem 0 0.5rem 0;margin-bottom:2.5rem;}}
 .hero-badge{{
     display:inline-flex;align-items:center;gap:6px;
@@ -260,8 +234,6 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
     height:1px;background:linear-gradient(90deg,{hero_accent}33,transparent);
     margin-top:2.2rem;border:none;
 }}
-
-/* ─── Section labels ───────────────────────────── */
 .section-label{{
     font-size:0.6rem;letter-spacing:3.5px;text-transform:uppercase;
     color:{section_lbl};margin-bottom:0.75rem;font-weight:700;
@@ -271,8 +243,6 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
     content:'';display:inline-block;width:16px;height:1px;
     background:{hero_accent};opacity:0.5;
 }}
-
-/* ─── Stat blocks ──────────────────────────────── */
 .stat-block{{
     background:{bg_card};border:1px solid {bdr};border-top:2px solid {bdr_top};
     border-radius:12px;padding:1.6rem 1.2rem 1.4rem;text-align:center;
@@ -287,8 +257,6 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
     line-height:1;margin-bottom:7px;font-weight:700;letter-spacing:-1px;
 }}
 .stat-label{{font-size:0.62rem;color:{stat_lbl};text-transform:uppercase;letter-spacing:2.5px;font-weight:600;}}
-
-/* ─── Result card ──────────────────────────────── */
 .result-card{{
     border-radius:16px;padding:2.2rem 1.8rem 1.8rem;
     text-align:center;margin-bottom:1.4rem;position:relative;overflow:hidden;
@@ -319,8 +287,6 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
     font-size:0.62rem;color:{muted_text};text-transform:uppercase;letter-spacing:2.5px;font-weight:600;
 }}
 .result-card .divider{{height:1px;background:{bdr};margin:1.2rem 0;}}
-
-/* ─── Prob bars ────────────────────────────────── */
 .prob-section{{margin-top:0.4rem;}}
 .prob-row{{margin:12px 0;}}
 .prob-label{{
@@ -334,8 +300,6 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
 }}
 .prob-bar-fill-p{{background:linear-gradient(90deg,#991111,#ee3333);height:100%;border-radius:100px;}}
 .prob-bar-fill-n{{background:linear-gradient(90deg,#0d4422,#1a9944);height:100%;border-radius:100px;}}
-
-/* ─── Rec panel ────────────────────────────────── */
 .rec-panel{{border-radius:14px;padding:1.6rem 1.8rem;margin-top:1.2rem;}}
 .rec-panel.pneumonia{{background:{rec_pneu_bg};border:1px solid {pneu_bdr};border-left:4px solid #cc2222;}}
 .rec-panel.normal{{background:{rec_norm_bg};border:1px solid {norm_bdr};border-left:4px solid #1a9944;}}
@@ -355,8 +319,6 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
 .rec-panel.pneumonia .rec-dot{{background:#cc2222;}}
 .rec-panel.normal    .rec-dot{{background:#22aa55;}}
 .rec-panel.uncertain .rec-dot{{background:#cc9900;}}
-
-/* ─── Warning banner ───────────────────────────── */
 .warning-banner{{
     background:{warn_bg};border:1px solid {warn_bdr};
     border-left:4px solid {warn_bdr_l};border-radius:12px;
@@ -367,8 +329,6 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
     letter-spacing:2px;margin:0 0 0.6rem 0;font-weight:700;
 }}
 .warning-banner p{{color:{warn_p};font-size:0.86rem;line-height:1.7;margin:0;font-weight:400;}}
-
-/* ─── PUMA cards ───────────────────────────────── */
 .puma-card{{
     background:{bg_card};border:1px solid {card_bdr};
     border-radius:12px;padding:1.5rem 1.6rem;margin-bottom:1rem;
@@ -385,8 +345,6 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
     border-radius:2px;display:inline-block;flex-shrink:0;
 }}
 .puma-card p{{color:{body_text};font-size:0.86rem;line-height:1.75;margin:0;font-weight:400;}}
-
-/* ─── Hyperparameter pills — FIXED ─────────────── */
 .hp-grid{{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:2rem;}}
 .hp-pill{{
     display:flex;flex-direction:column;align-items:flex-start;
@@ -401,63 +359,6 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
     font-family:'Courier New',monospace;font-size:0.92rem;
     color:{pill_color};font-weight:700;
 }}
-
-/* ─── PUMA Pipeline ────────────────────────────── */
-.puma-pipeline{{
-    background:{puma_phase_bg};border:1px solid {puma_phase_bdr};
-    border-radius:16px;padding:2rem 1.5rem;margin-bottom:1.5rem;
-    position:relative;overflow:hidden;
-}}
-.puma-pipeline::before{{
-    content:'';position:absolute;top:0;left:0;right:0;height:2px;
-    background:linear-gradient(90deg,transparent,{hero_accent}66,transparent);
-}}
-.puma-steps{{
-    display:flex;align-items:flex-start;justify-content:space-between;
-    gap:8px;position:relative;
-}}
-.puma-steps::before{{
-    content:'';position:absolute;top:28px;left:5%;right:5%;height:2px;
-    background:linear-gradient(90deg,{puma_arrow},{hero_accent}88,{puma_arrow});
-    z-index:0;
-}}
-.puma-step{{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;z-index:1;}}
-.puma-step-node{{
-    width:56px;height:56px;border-radius:50%;background:{puma_node_bg};
-    border:2px solid {puma_node_bdr};display:flex;align-items:center;justify-content:center;
-    font-size:1.4rem;position:relative;z-index:2;box-shadow:0 0 0 4px {badge_bg};
-}}
-.puma-step-label{{
-    font-size:0.72rem;font-weight:700;color:{puma_node_text};
-    text-align:center;text-transform:uppercase;letter-spacing:1px;
-    line-height:1.3;max-width:80px;
-}}
-.puma-step-sub{{
-    font-size:0.67rem;color:{puma_phase_text};
-    text-align:center;line-height:1.4;max-width:90px;
-}}
-.puma-phase-row{{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:1.5rem;}}
-.puma-phase{{
-    background:{puma_node_bg};border:1px solid {puma_node_bdr};
-    border-radius:10px;padding:1rem 1.2rem;
-}}
-.puma-phase-title{{
-    font-size:0.72rem;font-weight:700;color:{puma_node_text};
-    text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;
-    display:flex;align-items:center;gap:6px;
-}}
-.puma-phase-title span{{display:inline-block;width:8px;height:8px;border-radius:50%;}}
-.puma-phase-title span.predator{{background:#ee4444;}}
-.puma-phase-title span.prey{{background:{hero_accent};}}
-.puma-phase p{{font-size:0.78rem;color:{puma_phase_text};line-height:1.6;margin:0;}}
-.puma-tags{{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.2rem;}}
-.puma-tag{{
-    background:{puma_tag_bg};border:1px solid {puma_tag_bdr};
-    border-radius:100px;padding:4px 12px;font-size:0.7rem;
-    color:{puma_tag_color};font-weight:600;letter-spacing:0.5px;
-}}
-
-/* ─── About blocks ─────────────────────────────── */
 .about-block{{
     background:{bg_card};border:1px solid {card_bdr};
     border-left:3px solid {about_bdr};border-radius:0 12px 12px 0;
@@ -465,21 +366,34 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
 }}
 .about-block h4{{color:{about_h4};font-size:0.88rem;margin:0 0 0.5rem 0;font-weight:700;}}
 .about-block p{{color:{about_p};font-size:0.85rem;line-height:1.75;margin:0;font-weight:400;}}
-
-/* ─── X-ray wrap ───────────────────────────────── */
 .xray-wrap{{
     background:{xray_wrap_bg};border:1px solid {bdr};
     border-radius:14px;padding:12px;overflow:hidden;
 }}
-
-/* ─── Info hint ────────────────────────────────── */
 .info-hint{{
     background:{badge_bg};border:1px solid {badge_bdr};
     border-radius:8px;padding:10px 14px;
     font-size:0.8rem;color:{muted_text};font-weight:500;
 }}
 
-/* ─── Inputs ───────────────────────────────────── */
+/* ── Validity breakdown panel ─────────────────── */
+.validity-panel{{
+    background:{bg_card};border:1px solid {card_bdr};
+    border-radius:12px;padding:1.2rem 1.4rem;margin-top:1rem;
+}}
+.validity-panel h5{{
+    font-size:0.65rem;text-transform:uppercase;letter-spacing:2.5px;
+    color:{muted_text};font-weight:700;margin:0 0 0.8rem 0;
+}}
+.validity-row{{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:0.78rem;padding:5px 0;border-bottom:1px solid {bdr};color:{body_text};
+}}
+.validity-row:last-child{{border-bottom:none;}}
+.validity-pass{{color:#22aa55;font-weight:700;font-size:0.75rem;}}
+.validity-fail{{color:#cc2222;font-weight:700;font-size:0.75rem;}}
+.validity-warn{{color:#cc9900;font-weight:700;font-size:0.75rem;}}
+
 .stTextInput>div>div>input{{
     background:{input_bg} !important;border:1px solid {input_bdr} !important;
     color:{input_color} !important;border-radius:10px !important;
@@ -490,8 +404,6 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
     color:{body_text} !important;font-size:0.78rem !important;
     letter-spacing:0.5px;font-weight:600 !important;text-transform:uppercase;
 }}
-
-/* ─── Buttons ──────────────────────────────────── */
 .stButton>button{{
     background:linear-gradient(135deg,{'#002d44,#004466' if dark else '#0066aa,#0088cc'}) !important;
     color:{'#00c8f0' if dark else '#ffffff'} !important;
@@ -511,7 +423,6 @@ section[data-testid="stSidebar"] .stRadio > div > label:hover{{
 div[data-testid="stFileUploader"]{{
     background:{input_bg};border:2px dashed {bdr};border-radius:14px;padding:0.8rem;
 }}
-
 hr{{border-color:{hr_color} !important;border-width:1px 0 0 0 !important;}}
 [data-testid="stMarkdownContainer"] p{{color:{body_text};font-weight:400;}}
 ::-webkit-scrollbar{{width:4px;}}
@@ -520,7 +431,9 @@ hr{{border-color:{hr_color} !important;border-width:1px 0 0 0 !important;}}
 """, unsafe_allow_html=True)
 
 
-# ── Model loader ──────────────────────────────────────────────────
+# ══════════════════════════════════════════════════════
+# MODEL LOADER
+# ══════════════════════════════════════════════════════
 @st.cache_resource(show_spinner=False)
 def load_puma_model():
     if not os.path.exists("puma_cnn_model.h5"):
@@ -533,65 +446,231 @@ def load_puma_model():
     return model, bundle
 
 
+# ══════════════════════════════════════════════════════
+# IMPROVED X-RAY VALIDITY CHECKER
+# ══════════════════════════════════════════════════════
 def check_xray_validity(img_pil):
-    img_rgb  = np.array(img_pil.convert("RGB"))
-    img_gray = np.array(img_pil.convert("L"))
-    r,g,b    = img_rgb[:,:,0],img_rgb[:,:,1],img_rgb[:,:,2]
-    color_diff = float(np.mean(
-        np.abs(r.astype(int)-g.astype(int)) +
-        np.abs(g.astype(int)-b.astype(int)) +
-        np.abs(r.astype(int)-b.astype(int))
-    ))
-    mean_brightness = float(np.mean(img_gray))
-    std_brightness  = float(np.std(img_gray))
-    w,h = img_pil.size; ratio = w/h
-    score=100; reason=None
-    if color_diff>45:    score-=55; reason="Image appears to be a color photograph, not a grayscale X-ray."
-    if mean_brightness>210: score-=30; reason=reason or "Image is too bright to be a chest X-ray."
-    if std_brightness<15:   score-=40; reason=reason or "Image lacks the tonal variation typical of X-ray scans."
-    if ratio>2.5 or ratio<0.3: score-=25; reason=reason or "Unusual image dimensions for a chest X-ray."
-    return score>=40, max(0,score), reason
+    """
+    Multi-criteria validity checker designed to reject non-X-ray images
+    before they reach the CNN.
+
+    Criteria assessed:
+      1. Grayscale dominance  — real X-rays are monochrome; colour photos fail
+      2. Mean brightness      — X-rays are mid-tone (40–200); too bright = photo
+      3. Tonal spread (std)   — X-rays have wide tonal range; flat images fail
+      4. Aspect ratio         — chest X-rays are roughly square to portrait
+      5. Dark-pixel ratio     — X-rays have a meaningful proportion of dark pixels
+      6. High-saturation ratio— vivid colours signal non-X-ray images
+      7. Edge density         — X-rays have clear structural edges (ribs, lungs)
+
+    Returns:
+      is_valid (bool), score (int 0-100), reason (str|None), details (dict)
+    """
+    img_rgb  = np.array(img_pil.convert("RGB"),  dtype=np.float32)
+    img_gray = np.array(img_pil.convert("L"),    dtype=np.float32)
+
+    R, G, B = img_rgb[:,:,0], img_rgb[:,:,1], img_rgb[:,:,2]
+
+    details = {}
+    deductions = []
+
+    # ── 1. Grayscale dominance ────────────────────────────────────
+    # Mean absolute channel differences; real X-rays score < 8
+    rg_diff = float(np.mean(np.abs(R - G)))
+    gb_diff = float(np.mean(np.abs(G - B)))
+    rb_diff = float(np.mean(np.abs(R - B)))
+    color_diff = (rg_diff + gb_diff + rb_diff) / 3.0
+    details["color_diff"] = round(color_diff, 2)
+
+    if color_diff > 30:
+        deductions.append(("Colour photograph detected", 60))
+        details["color_diff_status"] = "FAIL"
+    elif color_diff > 15:
+        deductions.append(("Slight colour tint present", 20))
+        details["color_diff_status"] = "WARN"
+    else:
+        details["color_diff_status"] = "PASS"
+
+    # ── 2. Mean brightness ────────────────────────────────────────
+    # Real chest X-rays: mean ~80–185; photos are often brighter
+    mean_bright = float(np.mean(img_gray))
+    details["mean_brightness"] = round(mean_bright, 1)
+
+    if mean_bright > 210:
+        deductions.append(("Image too bright (overexposed or colour photo)", 35))
+        details["brightness_status"] = "FAIL"
+    elif mean_bright < 15:
+        deductions.append(("Image too dark (near-black image)", 30))
+        details["brightness_status"] = "FAIL"
+    elif mean_bright > 195 or mean_bright < 25:
+        deductions.append(("Unusual brightness for a chest X-ray", 15))
+        details["brightness_status"] = "WARN"
+    else:
+        details["brightness_status"] = "PASS"
+
+    # ── 3. Tonal spread (standard deviation) ─────────────────────
+    # X-rays have rich tonal variation (std > 35 typically)
+    std_bright = float(np.std(img_gray))
+    details["tonal_spread"] = round(std_bright, 1)
+
+    if std_bright < 20:
+        deductions.append(("Flat image — insufficient tonal range for X-ray", 40))
+        details["tonal_status"] = "FAIL"
+    elif std_bright < 30:
+        deductions.append(("Low tonal variance — may not be an X-ray", 15))
+        details["tonal_status"] = "WARN"
+    else:
+        details["tonal_status"] = "PASS"
+
+    # ── 4. Aspect ratio ───────────────────────────────────────────
+    # PA chest X-ray: roughly 0.7 – 1.5 (width/height)
+    w, h = img_pil.size
+    ratio = w / h
+    details["aspect_ratio"] = round(ratio, 2)
+
+    if ratio > 2.8 or ratio < 0.25:
+        deductions.append(("Extreme aspect ratio — unlikely chest X-ray", 30))
+        details["ratio_status"] = "FAIL"
+    elif ratio > 1.8 or ratio < 0.45:
+        deductions.append(("Unusual aspect ratio for a chest X-ray", 12))
+        details["ratio_status"] = "WARN"
+    else:
+        details["ratio_status"] = "PASS"
+
+    # ── 5. Dark-pixel ratio ───────────────────────────────────────
+    # Chest X-rays typically have 20-65 % dark pixels (< 80 intensity)
+    dark_ratio = float(np.mean(img_gray < 80))
+    details["dark_pixel_ratio"] = round(dark_ratio, 3)
+
+    if dark_ratio < 0.05:
+        deductions.append(("Too few dark pixels — image appears washed out", 25))
+        details["dark_ratio_status"] = "FAIL"
+    elif dark_ratio > 0.85:
+        deductions.append(("Too many dark pixels — near-black image", 25))
+        details["dark_ratio_status"] = "FAIL"
+    else:
+        details["dark_ratio_status"] = "PASS"
+
+    # ── 6. High-saturation pixel ratio ───────────────────────────
+    # Convert to HSV and check proportion of vivid pixels
+    # X-rays should have almost zero highly saturated pixels
+    img_hsv = np.array(img_pil.convert("RGB").convert("RGB"))
+    # Manual saturation approximation: (max - min) / max per pixel
+    pmax = np.max(img_rgb, axis=2)
+    pmin = np.min(img_rgb, axis=2)
+    sat  = np.where(pmax > 0, (pmax - pmin) / (pmax + 1e-6), 0.0)
+    high_sat_ratio = float(np.mean(sat > 0.35))
+    details["high_saturation_ratio"] = round(high_sat_ratio, 4)
+
+    if high_sat_ratio > 0.15:
+        deductions.append(("High colour saturation detected — not an X-ray", 55))
+        details["saturation_status"] = "FAIL"
+    elif high_sat_ratio > 0.06:
+        deductions.append(("Moderate colour saturation — questionable X-ray", 20))
+        details["saturation_status"] = "WARN"
+    else:
+        details["saturation_status"] = "PASS"
+
+    # ── 7. Edge density ───────────────────────────────────────────
+    # X-rays contain clear structural edges (ribs, diaphragm, lungs)
+    # We use a simple Sobel-style gradient on a downsampled version
+    thumb = np.array(img_pil.convert("L").resize((128, 128)), dtype=np.float32)
+    gx = np.abs(np.diff(thumb, axis=1))
+    gy = np.abs(np.diff(thumb, axis=0))
+    edge_density = float(np.mean(gx) + np.mean(gy)) / 2.0
+    details["edge_density"] = round(edge_density, 2)
+
+    if edge_density < 3.0:
+        deductions.append(("Very low edge density — insufficient structural detail", 30))
+        details["edge_status"] = "FAIL"
+    elif edge_density < 5.0:
+        deductions.append(("Low edge density — structural features not clear", 10))
+        details["edge_status"] = "WARN"
+    else:
+        details["edge_status"] = "PASS"
+
+    # ── Compute final score ───────────────────────────────────────
+    score = 100
+    primary_reason = None
+    for reason_text, penalty in deductions:
+        score -= penalty
+        if primary_reason is None:
+            primary_reason = reason_text
+
+    score = max(0, score)
+
+    # Threshold: must score ≥ 55 to proceed (raised from original 40)
+    is_valid = (score >= 55)
+
+    return is_valid, score, primary_reason, details
 
 
+# ══════════════════════════════════════════════════════
+# IMAGE PREPROCESSING
+# ══════════════════════════════════════════════════════
 def preprocess_image(img_pil, img_size=224):
-    img = img_pil.convert("RGB").resize((img_size,img_size))
-    arr = np.array(img,dtype=np.float32)/255.0
-    return np.expand_dims(arr,axis=0)
+    img = img_pil.convert("RGB").resize((img_size, img_size))
+    arr = np.array(img, dtype=np.float32) / 255.0
+    return np.expand_dims(arr, axis=0)
 
 
+# ══════════════════════════════════════════════════════
+# PREDICTION  (with confidence gating)
+# ══════════════════════════════════════════════════════
 def predict(model, img_array):
-    prob_p = float(model.predict(img_array,verbose=0)[0][0])
-    prob_n = 1.0-prob_p
-    label  = "PNEUMONIA" if prob_p>=0.5 else "NORMAL"
-    conf   = prob_p if label=="PNEUMONIA" else prob_n
-    return label, conf, {"NORMAL":prob_n,"PNEUMONIA":prob_p}
+    """
+    Run inference. If the model's raw confidence is below a minimum
+    threshold we flag the result as uncertain rather than blindly
+    outputting the majority-class label.
+    """
+    prob_p = float(model.predict(img_array, verbose=0)[0][0])
+    prob_n = 1.0 - prob_p
+
+    # Confidence gating: require ≥ 60 % confidence for a firm label
+    CONFIDENCE_GATE = 0.60
+
+    if prob_p >= CONFIDENCE_GATE:
+        label = "PNEUMONIA"
+        conf  = prob_p
+    elif prob_n >= CONFIDENCE_GATE:
+        label = "NORMAL"
+        conf  = prob_n
+    else:
+        # Both classes below gate → uncertain
+        label = "UNCERTAIN"
+        conf  = max(prob_p, prob_n)
+
+    return label, conf, {"NORMAL": prob_n, "PNEUMONIA": prob_p}
 
 
+# ══════════════════════════════════════════════════════
+# RECOMMENDATIONS
+# ══════════════════════════════════════════════════════
 def get_recommendations(label, conf):
-    if label=="PNEUMONIA" and conf>=0.80:
-        return "pneumonia","High-Confidence Pneumonia Detected",[
+    if label == "PNEUMONIA" and conf >= 0.80:
+        return "pneumonia", "High-Confidence Pneumonia Detected", [
             "Seek medical attention promptly — present this report to a qualified physician or pulmonologist.",
             "Do not self-medicate. A doctor will determine whether the cause is bacterial or viral.",
             "Monitor symptoms: worsening breathlessness, high fever, or chest pain warrants emergency care.",
             "Rest, hydrate, and avoid strenuous activity until cleared by a medical professional.",
             "A follow-up chest X-ray may be required after treatment to confirm resolution.",
         ]
-    elif label=="PNEUMONIA" and conf>=0.60:
-        return "pneumonia","Possible Pneumonia — Consult a Doctor",[
+    elif label == "PNEUMONIA" and conf >= 0.60:
+        return "pneumonia", "Possible Pneumonia — Consult a Doctor", [
             "Model confidence is moderate. This result should be reviewed by a licensed physician.",
             "Describe your symptoms clearly: duration of cough, fever pattern, and any breathing difficulty.",
             "Your doctor may order additional tests (blood work, CT scan) for a definitive diagnosis.",
             "Avoid crowded spaces and take standard precautions while awaiting professional evaluation.",
         ]
-    elif label=="NORMAL" and conf>=0.80:
-        return "normal","No Pneumonia Detected",[
+    elif label == "NORMAL" and conf >= 0.80:
+        return "normal", "No Pneumonia Detected", [
             "The X-ray appears normal. No significant pulmonary infiltrates were identified by the model.",
             "If you still have respiratory symptoms, consult a physician — not all conditions show on X-ray.",
             "Maintain good respiratory hygiene: handwashing, avoiding smoke, and keeping vaccinations current.",
             "Schedule routine health checkups as advised by your healthcare provider.",
         ]
     else:
-        return "uncertain","Low Confidence — Inconclusive Result",[
+        return "uncertain", "Low Confidence — Inconclusive Result", [
             "The model could not make a confident determination from this image.",
             "Image quality or positioning may be affecting the result. Retake the X-ray if possible.",
             "This result must be reviewed by a qualified radiologist before any clinical decision is made.",
@@ -599,73 +678,73 @@ def get_recommendations(label, conf):
         ]
 
 
-# ════════════════════════════════════════════════
-# PDF BUILDER — 2 pages, nothing squished
-# ════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════
+# PDF BUILDER
+# ══════════════════════════════════════════════════════
 def hex_to_rl(hx):
-    hx=hx.lstrip('#')
-    return colors.Color(*[int(hx[i:i+2],16)/255 for i in (0,2,4)])
+    hx = hx.lstrip('#')
+    return colors.Color(*[int(hx[i:i+2], 16) / 255 for i in (0, 2, 4)])
 
 
 def draw_header(c, W, H, HDR_H, white, navy, accent, slate_lt):
-    c.setFillColor(navy); c.rect(0,H-HDR_H,W,HDR_H,fill=1,stroke=0)
-    c.setFillColor(accent); c.rect(W-5*mm,H-HDR_H,5*mm,HDR_H,fill=1,stroke=0)
-    c.setFont("Helvetica-Bold",13); c.setFillColor(white)
-    c.drawString(18*mm,H-12*mm,"Bells University of Technology")
-    c.setFont("Helvetica",7.5); c.setFillColor(hex_to_rl("9ab8d8"))
-    c.drawString(18*mm,H-19*mm,
+    c.setFillColor(navy); c.rect(0, H-HDR_H, W, HDR_H, fill=1, stroke=0)
+    c.setFillColor(accent); c.rect(W-5*mm, H-HDR_H, 5*mm, HDR_H, fill=1, stroke=0)
+    c.setFont("Helvetica-Bold", 13); c.setFillColor(white)
+    c.drawString(18*mm, H-12*mm, "Bells University of Technology")
+    c.setFont("Helvetica", 7.5); c.setFillColor(hex_to_rl("9ab8d8"))
+    c.drawString(18*mm, H-19*mm,
         "Department of Computer Science & Information Technology  |  College of Natural & Applied Sciences, Ota")
-    c.setStrokeColor(colors.Color(1,1,1,0.12)); c.setLineWidth(0.4)
-    c.line(18*mm,H-23*mm,W-24*mm,H-23*mm)
-    c.setFont("Helvetica-Bold",9); c.setFillColor(white)
-    c.drawString(18*mm,H-30*mm,"PneumoScan  ·  PUMA-Optimized CNN")
-    c.setFont("Helvetica",7); c.setFillColor(slate_lt)
-    c.drawRightString(W-26*mm,H-30*mm,"AI-ASSISTED CHEST X-RAY RADIOLOGY REPORT")
+    c.setStrokeColor(colors.Color(1, 1, 1, 0.12)); c.setLineWidth(0.4)
+    c.line(18*mm, H-23*mm, W-24*mm, H-23*mm)
+    c.setFont("Helvetica-Bold", 9); c.setFillColor(white)
+    c.drawString(18*mm, H-30*mm, "PneumoScan  ·  PUMA-Optimized CNN")
+    c.setFont("Helvetica", 7); c.setFillColor(slate_lt)
+    c.drawRightString(W-26*mm, H-30*mm, "AI-ASSISTED CHEST X-RAY RADIOLOGY REPORT")
 
 
 def draw_footer(c, W, page_num, total, date_str, time_str, navy, slate):
-    FY=16*mm
+    FY = 16*mm
     c.setStrokeColor(navy); c.setLineWidth(0.6)
-    c.line(18*mm,FY,W-18*mm,FY)
-    c.setFont("Helvetica-Bold",7.5); c.setFillColor(navy)
-    c.drawString(18*mm,FY-5*mm,"PneumoScan  |  AI Radiology Screening System")
-    c.setFont("Helvetica",6.5); c.setFillColor(slate)
-    c.drawString(18*mm,FY-10*mm,
+    c.line(18*mm, FY, W-18*mm, FY)
+    c.setFont("Helvetica-Bold", 7.5); c.setFillColor(navy)
+    c.drawString(18*mm, FY-5*mm, "PneumoScan  |  AI Radiology Screening System")
+    c.setFont("Helvetica", 6.5); c.setFillColor(slate)
+    c.drawString(18*mm, FY-10*mm,
         "Bells University of Technology, Ota  |  B.Tech Computer Science — Final Year Project")
-    c.setFont("Helvetica",7); c.setFillColor(slate)
-    c.drawRightString(W-18*mm,FY-5*mm,f"{date_str}  ·  {time_str}")
-    c.drawRightString(W-18*mm,FY-10*mm,f"Page {page_num} of {total}")
+    c.setFont("Helvetica", 7); c.setFillColor(slate)
+    c.drawRightString(W-18*mm, FY-5*mm,  f"{date_str}  ·  {time_str}")
+    c.drawRightString(W-18*mm, FY-10*mm, f"Page {page_num} of {total}")
     c.setFillColor(navy)
-    c.rect(0,0,5*mm,FY+2*mm,fill=1,stroke=0)
-    c.rect(W-5*mm,0,5*mm,FY+2*mm,fill=1,stroke=0)
+    c.rect(0, 0, 5*mm, FY+2*mm, fill=1, stroke=0)
+    c.rect(W-5*mm, 0, 5*mm, FY+2*mm, fill=1, stroke=0)
 
 
 def sec_head(c, x, y, text, navy):
-    c.setFont("Helvetica-Bold",8.5); c.setFillColor(navy)
-    c.drawString(x,y,text)
-    y-=2*mm; c.setStrokeColor(navy); c.setLineWidth(1.0)
-    c.line(x,y,x+65*mm,y)
-    return y-6*mm
+    c.setFont("Helvetica-Bold", 8.5); c.setFillColor(navy)
+    c.drawString(x, y, text)
+    y -= 2*mm; c.setStrokeColor(navy); c.setLineWidth(1.0)
+    c.line(x, y, x+65*mm, y)
+    return y - 6*mm
 
 
 def wrap_text(c, text, max_w, font="Helvetica", size=8.5):
-    words=text.split(); line=""; lines=[]
+    words = text.split(); line = ""; lines = []
     for w in words:
-        test=(line+" "+w).strip()
-        if c.stringWidth(test,font,size)<max_w: line=test
+        test = (line + " " + w).strip()
+        if c.stringWidth(test, font, size) < max_w:
+            line = test
         else:
             if line: lines.append(line)
-            line=w
+            line = w
     if line: lines.append(line)
     return lines
 
 
 def build_pdf(first, last, email, label, conf, probs, img_pil, bundle, rec_items):
-    buf=io.BytesIO()
-    W,H=A4
-    c=rl_canvas.Canvas(buf,pagesize=A4)
+    buf = io.BytesIO()
+    W, H = A4
+    c = rl_canvas.Canvas(buf, pagesize=A4)
 
-    # Palette
     white   = colors.white
     pg_bg   = hex_to_rl("fafcff")
     navy    = hex_to_rl("0b1f3d")
@@ -675,15 +754,15 @@ def build_pdf(first, last, email, label, conf, probs, img_pil, bundle, rec_items
     rule    = hex_to_rl("c8d8ea")
     shade   = hex_to_rl("f2f6fa")
     black   = hex_to_rl("1a1e2a")
-    red_c   = hex_to_rl("b31c1c"); grn_c=hex_to_rl("1a7a3c"); amb_c=hex_to_rl("8a6400")
-    red_bg  = hex_to_rl("fff2f2"); grn_bg=hex_to_rl("f2fbf5"); amb_bg=hex_to_rl("fffbf0")
-    red_bdr = hex_to_rl("e8a0a0"); grn_bdr=hex_to_rl("80c89a"); amb_bdr=hex_to_rl("d4b464")
+    red_c   = hex_to_rl("b31c1c"); grn_c = hex_to_rl("1a7a3c"); amb_c = hex_to_rl("8a6400")
+    red_bg  = hex_to_rl("fff2f2"); grn_bg = hex_to_rl("f2fbf5"); amb_bg = hex_to_rl("fffbf0")
+    red_bdr = hex_to_rl("e8a0a0"); grn_bdr = hex_to_rl("80c89a"); amb_bdr = hex_to_rl("d4b464")
     accent  = hex_to_rl("0088cc")
-    warn_bg = hex_to_rl("fff8e5"); warn_bdr=hex_to_rl("c89a18")
+    warn_bg = hex_to_rl("fff8e5"); warn_bdr = hex_to_rl("c89a18")
 
-    rc = red_c  if label=="PNEUMONIA" else (grn_c  if label=="NORMAL" else amb_c)
-    rb = red_bg if label=="PNEUMONIA" else (grn_bg if label=="NORMAL" else amb_bg)
-    rd = red_bdr if label=="PNEUMONIA" else (grn_bdr if label=="NORMAL" else amb_bdr)
+    rc = red_c   if label == "PNEUMONIA" else (grn_c   if label == "NORMAL" else amb_c)
+    rb = red_bg  if label == "PNEUMONIA" else (grn_bg  if label == "NORMAL" else amb_bg)
+    rd = red_bdr if label == "PNEUMONIA" else (grn_bdr if label == "NORMAL" else amb_bdr)
 
     now      = datetime.datetime.now()
     date_str = now.strftime("%d %B %Y")
@@ -691,238 +770,232 @@ def build_pdf(first, last, email, label, conf, probs, img_pil, bundle, rec_items
     rep_id   = f"PSR-{now.strftime('%Y%m%d%H%M%S')}"
 
     verdict = (
-        "PNEUMONIA DETECTED"          if label=="PNEUMONIA"
-        else "NO PNEUMONIA DETECTED"   if label=="NORMAL"
-        else "INCONCLUSIVE — FURTHER REVIEW REQUIRED"
+        "PNEUMONIA DETECTED"
+        if label == "PNEUMONIA" else
+        "NO PNEUMONIA DETECTED"
+        if label == "NORMAL" else
+        "INCONCLUSIVE — FURTHER REVIEW REQUIRED"
     )
     impression = (
         "Radiographic findings are consistent with pneumonia. Pulmonary infiltrates detected with high model confidence. Clinical correlation and physician review are strongly advised."
-        if label=="PNEUMONIA" and conf>=0.80 else
+        if label == "PNEUMONIA" and conf >= 0.80 else
         "Radiographic findings suggest possible pneumonia. Model confidence is moderate; physician review and supplementary investigations recommended."
-        if label=="PNEUMONIA" else
+        if label == "PNEUMONIA" else
         "No radiographic evidence of pneumonia identified. Lung fields appear clear. Clinical correlation recommended if symptoms persist."
-        if label=="NORMAL" and conf>=0.80 else
+        if label == "NORMAL" and conf >= 0.80 else
         "Analysis is inconclusive due to low model confidence. Image quality or positioning may be suboptimal. Radiologist review is required."
     )
 
     HDR_H = 38*mm
 
-    # ═══════════════════
-    # PAGE 1
-    # ═══════════════════
-    c.setFillColor(pg_bg); c.rect(0,0,W,H,fill=1,stroke=0)
-    draw_header(c,W,H,HDR_H,white,navy,accent,slt_lt)
+    # ── PAGE 1 ────────────────────────────────────────────────────
+    c.setFillColor(pg_bg); c.rect(0, 0, W, H, fill=1, stroke=0)
+    draw_header(c, W, H, HDR_H, white, navy, accent, slt_lt)
 
-    y = H-HDR_H-5*mm
+    y = H - HDR_H - 5*mm
+    c.setFont("Helvetica-Bold", 11.5); c.setFillColor(navy)
+    c.drawString(18*mm, y, "RADIOLOGY REPORT — CHEST X-RAY ANALYSIS")
+    c.setFont("Helvetica", 7.5); c.setFillColor(slate)
+    c.drawRightString(W-18*mm, y, f"Report ID: {rep_id}")
+    y -= 3*mm; c.setStrokeColor(rule); c.setLineWidth(0.8)
+    c.line(18*mm, y, W-18*mm, y); y -= 8*mm
 
-    # Title row
-    c.setFont("Helvetica-Bold",11.5); c.setFillColor(navy)
-    c.drawString(18*mm,y,"RADIOLOGY REPORT — CHEST X-RAY ANALYSIS")
-    c.setFont("Helvetica",7.5); c.setFillColor(slate)
-    c.drawRightString(W-18*mm,y,f"Report ID: {rep_id}")
-    y-=3*mm; c.setStrokeColor(rule); c.setLineWidth(0.8)
-    c.line(18*mm,y,W-18*mm,y); y-=8*mm
-
-    # Patient info panel
-    INFO_H=32*mm
-    c.setFillColor(shade); c.roundRect(18*mm,y-INFO_H,W-36*mm,INFO_H,3,fill=1,stroke=0)
+    INFO_H = 32*mm
+    c.setFillColor(shade); c.roundRect(18*mm, y-INFO_H, W-36*mm, INFO_H, 3, fill=1, stroke=0)
     c.setStrokeColor(rule); c.setLineWidth(0.5)
-    c.roundRect(18*mm,y-INFO_H,W-36*mm,INFO_H,3,fill=0,stroke=1)
-    c.setFillColor(navy_lt); c.rect(18*mm,y-INFO_H,3*mm,INFO_H,fill=1,stroke=0)
+    c.roundRect(18*mm, y-INFO_H, W-36*mm, INFO_H, 3, fill=0, stroke=1)
+    c.setFillColor(navy_lt); c.rect(18*mm, y-INFO_H, 3*mm, INFO_H, fill=1, stroke=0)
 
-    col_l = 18*mm+3*mm+6*mm
-    col_r = 18*mm+(W-36*mm)/2+8*mm
-    y_i   = y-7*mm
+    col_l = 18*mm + 3*mm + 6*mm
+    col_r = 18*mm + (W-36*mm)/2 + 8*mm
+    y_i   = y - 7*mm
     rows  = [
-        ("PATIENT NAME",  f"{first} {last}",  "REPORT DATE",       date_str),
-        ("EMAIL ADDRESS",  email,              "TIME OF ANALYSIS",  time_str),
-        ("REPORT ID",      rep_id,             "IMAGING MODALITY",  "Chest X-Ray (PA/AP)"),
+        ("PATIENT NAME",   f"{first} {last}",    "REPORT DATE",       date_str),
+        ("EMAIL ADDRESS",  email,                 "TIME OF ANALYSIS",  time_str),
+        ("REPORT ID",      rep_id,                "IMAGING MODALITY",  "Chest X-Ray (PA/AP)"),
     ]
-    for lbl_l,val_l,lbl_r,val_r in rows:
-        c.setFont("Helvetica",6.5); c.setFillColor(slt_lt)
-        c.drawString(col_l,y_i,lbl_l); c.drawString(col_r,y_i,lbl_r)
-        c.setFont("Helvetica-Bold",9); c.setFillColor(black)
-        c.drawString(col_l,y_i-5*mm,val_l); c.drawString(col_r,y_i-5*mm,val_r)
-        y_i-=9.5*mm
+    for lbl_l, val_l, lbl_r, val_r in rows:
+        c.setFont("Helvetica", 6.5); c.setFillColor(slt_lt)
+        c.drawString(col_l, y_i, lbl_l); c.drawString(col_r, y_i, lbl_r)
+        c.setFont("Helvetica-Bold", 9); c.setFillColor(black)
+        c.drawString(col_l, y_i-5*mm, val_l); c.drawString(col_r, y_i-5*mm, val_r)
+        y_i -= 9.5*mm
 
-    y-=INFO_H+9*mm
+    y -= INFO_H + 9*mm
+    y = sec_head(c, 18*mm, y, "CLINICAL IMPRESSION", navy)
 
-    # Clinical Impression
-    y=sec_head(c,18*mm,y,"CLINICAL IMPRESSION",navy)
-
-    VH=20*mm
-    c.setFillColor(rb); c.roundRect(18*mm,y-VH,W-36*mm,VH,4,fill=1,stroke=0)
+    VH = 20*mm
+    c.setFillColor(rb); c.roundRect(18*mm, y-VH, W-36*mm, VH, 4, fill=1, stroke=0)
     c.setStrokeColor(rd); c.setLineWidth(0.6)
-    c.roundRect(18*mm,y-VH,W-36*mm,VH,4,fill=0,stroke=1)
-    c.setFillColor(rc); c.rect(18*mm,y-VH,3.5*mm,VH,fill=1,stroke=0)
+    c.roundRect(18*mm, y-VH, W-36*mm, VH, 4, fill=0, stroke=1)
+    c.setFillColor(rc); c.rect(18*mm, y-VH, 3.5*mm, VH, fill=1, stroke=0)
 
-    BW=22*mm; BH=10*mm
-    bx=W-18*mm-BW-3*mm; by=y-VH/2-BH/2
-    c.setFillColor(rc); c.roundRect(bx,by,BW,BH,3,fill=1,stroke=0)
-    c.setFont("Helvetica-Bold",10); c.setFillColor(white)
-    c.drawCentredString(bx+BW/2,by+3*mm,f"{conf*100:.1f}%")
+    BW = 22*mm; BH = 10*mm
+    bx = W - 18*mm - BW - 3*mm; by = y - VH/2 - BH/2
+    c.setFillColor(rc); c.roundRect(bx, by, BW, BH, 3, fill=1, stroke=0)
+    c.setFont("Helvetica-Bold", 10); c.setFillColor(white)
+    c.drawCentredString(bx+BW/2, by+3*mm, f"{conf*100:.1f}%")
 
-    tx=18*mm+3.5*mm+5*mm
-    c.setFont("Helvetica-Bold",11); c.setFillColor(rc); c.drawString(tx,y-7*mm,verdict)
-    c.setFont("Helvetica",7.5); c.setFillColor(slate)
-    c.drawString(tx,y-13.5*mm,f"Confidence: {conf*100:.1f}%   |   PUMA-Optimized CNN v1.0   |   {date_str}")
+    tx = 18*mm + 3.5*mm + 5*mm
+    c.setFont("Helvetica-Bold", 11); c.setFillColor(rc); c.drawString(tx, y-7*mm, verdict)
+    c.setFont("Helvetica", 7.5); c.setFillColor(slate)
+    c.drawString(tx, y-13.5*mm, f"Confidence: {conf*100:.1f}%   |   PUMA-Optimized CNN v1.0   |   {date_str}")
 
-    y-=VH+6*mm
-    c.setFont("Helvetica-Bold",7.5); c.setFillColor(slate); c.drawString(18*mm,y,"Impression:")
-    y-=5*mm; c.setFont("Helvetica",8.5); c.setFillColor(black)
-    for ln in wrap_text(c,impression,W-36*mm):
-        c.drawString(18*mm,y,ln); y-=5.5*mm
-    y-=8*mm
+    y -= VH + 6*mm
+    c.setFont("Helvetica-Bold", 7.5); c.setFillColor(slate); c.drawString(18*mm, y, "Impression:")
+    y -= 5*mm; c.setFont("Helvetica", 8.5); c.setFillColor(black)
+    for ln in wrap_text(c, impression, W-36*mm):
+        c.drawString(18*mm, y, ln); y -= 5.5*mm
+    y -= 8*mm
 
-    # Probability Analysis
-    y=sec_head(c,18*mm,y,"PROBABILITY ANALYSIS",navy)
-    LW=52*mm; PW=20*mm; BW2=W-36*mm-LW-PW-8*mm; bx2=18*mm+LW
-    for lbl_t,pct,col,bg in [
-        ("Pneumonia Probability",probs["PNEUMONIA"],red_c,red_bg),
-        ("Normal Probability",probs["NORMAL"],grn_c,grn_bg),
+    y = sec_head(c, 18*mm, y, "PROBABILITY ANALYSIS", navy)
+    LW = 52*mm; PW = 20*mm; BW2 = W - 36*mm - LW - PW - 8*mm; bx2 = 18*mm + LW
+    for lbl_t, pct, col, bg in [
+        ("Pneumonia Probability", probs["PNEUMONIA"], red_c, red_bg),
+        ("Normal Probability",    probs["NORMAL"],    grn_c, grn_bg),
     ]:
-        c.setFont("Helvetica",8.5); c.setFillColor(black); c.drawString(18*mm,y,lbl_t)
-        c.setFillColor(rule); c.roundRect(bx2,y-3.5*mm,BW2,5*mm,2,fill=1,stroke=0)
-        if pct>0.005:
-            c.setFillColor(col); c.roundRect(bx2,y-3.5*mm,max(3,BW2*pct),5*mm,2,fill=1,stroke=0)
-        px=bx2+BW2+4*mm
-        c.setFillColor(bg); c.roundRect(px,y-3*mm,PW,4.5*mm,2,fill=1,stroke=0)
+        c.setFont("Helvetica", 8.5); c.setFillColor(black); c.drawString(18*mm, y, lbl_t)
+        c.setFillColor(rule); c.roundRect(bx2, y-3.5*mm, BW2, 5*mm, 2, fill=1, stroke=0)
+        if pct > 0.005:
+            c.setFillColor(col); c.roundRect(bx2, y-3.5*mm, max(3, BW2*pct), 5*mm, 2, fill=1, stroke=0)
+        px = bx2 + BW2 + 4*mm
+        c.setFillColor(bg); c.roundRect(px, y-3*mm, PW, 4.5*mm, 2, fill=1, stroke=0)
         c.setStrokeColor(col); c.setLineWidth(0.4)
-        c.roundRect(px,y-3*mm,PW,4.5*mm,2,fill=0,stroke=1)
-        c.setFont("Helvetica-Bold",8); c.setFillColor(col)
-        c.drawCentredString(px+PW/2,y-0.5*mm,f"{pct*100:.1f}%")
-        y-=13*mm
-    y-=6*mm
+        c.roundRect(px, y-3*mm, PW, 4.5*mm, 2, fill=0, stroke=1)
+        c.setFont("Helvetica-Bold", 8); c.setFillColor(col)
+        c.drawCentredString(px+PW/2, y-0.5*mm, f"{pct*100:.1f}%")
+        y -= 13*mm
+    y -= 6*mm
 
-    # Radiographic Image
-    y=sec_head(c,18*mm,y,"RADIOGRAPHIC IMAGE",navy)
-    ICW=(W-40*mm)*0.52; NW=(W-40*mm)*0.48-4*mm; IH=65*mm; nx=18*mm+ICW+4*mm
+    y = sec_head(c, 18*mm, y, "RADIOGRAPHIC IMAGE", navy)
+    ICW = (W-40*mm)*0.52; NW = (W-40*mm)*0.48 - 4*mm; IH = 65*mm; nx = 18*mm + ICW + 4*mm
 
-    c.setFillColor(hex_to_rl("0a0e14")); c.roundRect(18*mm,y-IH,ICW,IH,4,fill=1,stroke=0)
-    c.setStrokeColor(rule); c.setLineWidth(0.5); c.roundRect(18*mm,y-IH,ICW,IH,4,fill=0,stroke=1)
-    ob=io.BytesIO(); img_pil.convert("RGB").save(ob,format="JPEG",quality=92); ob.seek(0)
-    c.drawImage(ImageReader(ob),18*mm+2*mm,y-IH+2*mm,width=ICW-4*mm,height=IH-4*mm,preserveAspectRatio=True)
-    c.setFont("Helvetica",6.5); c.setFillColor(slate)
-    c.drawCentredString(18*mm+ICW/2,y-IH-4*mm,"Figure 1 — Submitted Chest X-Ray")
+    c.setFillColor(hex_to_rl("0a0e14")); c.roundRect(18*mm, y-IH, ICW, IH, 4, fill=1, stroke=0)
+    c.setStrokeColor(rule); c.setLineWidth(0.5); c.roundRect(18*mm, y-IH, ICW, IH, 4, fill=0, stroke=1)
+    ob = io.BytesIO(); img_pil.convert("RGB").save(ob, format="JPEG", quality=92); ob.seek(0)
+    c.drawImage(ImageReader(ob), 18*mm+2*mm, y-IH+2*mm, width=ICW-4*mm, height=IH-4*mm, preserveAspectRatio=True)
+    c.setFont("Helvetica", 6.5); c.setFillColor(slate)
+    c.drawCentredString(18*mm+ICW/2, y-IH-4*mm, "Figure 1 — Submitted Chest X-Ray")
 
-    c.setFillColor(shade); c.roundRect(nx,y-IH,NW,IH,4,fill=1,stroke=0)
-    c.setStrokeColor(rule); c.setLineWidth(0.5); c.roundRect(nx,y-IH,NW,IH,4,fill=0,stroke=1)
-    c.setFillColor(navy_lt); c.rect(nx,y-IH,2.5*mm,IH,fill=1,stroke=0)
-    ny=y-7*mm
-    c.setFont("Helvetica-Bold",7); c.setFillColor(navy); c.drawString(nx+5*mm,ny,"AI ANALYSIS NOTES")
-    ny-=1.5*mm; c.setStrokeColor(slt_lt); c.setLineWidth(0.3)
-    c.line(nx+5*mm,ny,nx+NW-3*mm,ny); ny-=5.5*mm
+    c.setFillColor(shade); c.roundRect(nx, y-IH, NW, IH, 4, fill=1, stroke=0)
+    c.setStrokeColor(rule); c.setLineWidth(0.5); c.roundRect(nx, y-IH, NW, IH, 4, fill=0, stroke=1)
+    c.setFillColor(navy_lt); c.rect(nx, y-IH, 2.5*mm, IH, fill=1, stroke=0)
+    ny = y - 7*mm
+    c.setFont("Helvetica-Bold", 7); c.setFillColor(navy); c.drawString(nx+5*mm, ny, "AI ANALYSIS NOTES")
+    ny -= 1.5*mm; c.setStrokeColor(slt_lt); c.setLineWidth(0.3)
+    c.line(nx+5*mm, ny, nx+NW-3*mm, ny); ny -= 5.5*mm
 
-    anotes=[("Analysis Engine","PUMA-CNN v1.0"),("Architecture","Convolutional Neural Net"),
-            ("Optimizer","PUMA Metaheuristic"),("Input Resolution","224 × 224 px (RGB)"),
-            ("Output Layer","Sigmoid (Binary)"),("Prediction",label.title()),("Confidence",f"{conf*100:.1f}%")]
+    anotes = [
+        ("Analysis Engine",   "PUMA-CNN v1.0"),
+        ("Architecture",      "Convolutional Neural Net"),
+        ("Optimizer",         "PUMA Metaheuristic"),
+        ("Input Resolution",  "224 × 224 px (RGB)"),
+        ("Output Layer",      "Sigmoid (Binary)"),
+        ("Prediction",        label.title()),
+        ("Confidence",        f"{conf*100:.1f}%"),
+    ]
     if bundle:
-        m=bundle.get("metrics",{})
-        anotes+=[("Model Accuracy",f"{m.get('accuracy',0)*100:.1f}%"),
-                 ("Precision",f"{m.get('precision',0)*100:.1f}%"),
-                 ("Recall",f"{m.get('recall',0)*100:.1f}%"),
-                 ("F1 Score",f"{m.get('f1_score',0)*100:.1f}%")]
-    for kt,vt in anotes:
-        if ny<y-IH+5*mm: break
-        c.setFont("Helvetica",6.5); c.setFillColor(slt_lt); c.drawString(nx+5*mm,ny,kt)
-        c.setFont("Helvetica-Bold",6.5); c.setFillColor(black); c.drawRightString(nx+NW-4*mm,ny,vt)
-        ny-=4*mm; c.setStrokeColor(rule); c.setLineWidth(0.2)
-        c.line(nx+5*mm,ny+0.5*mm,nx+NW-4*mm,ny+0.5*mm); ny-=2*mm
+        m = bundle.get("metrics", {})
+        anotes += [
+            ("Model Accuracy", f"{m.get('accuracy',  0)*100:.1f}%"),
+            ("Precision",      f"{m.get('precision', 0)*100:.1f}%"),
+            ("Recall",         f"{m.get('recall',    0)*100:.1f}%"),
+            ("F1 Score",       f"{m.get('f1_score',  0)*100:.1f}%"),
+        ]
+    for kt, vt in anotes:
+        if ny < y - IH + 5*mm: break
+        c.setFont("Helvetica", 6.5); c.setFillColor(slt_lt); c.drawString(nx+5*mm, ny, kt)
+        c.setFont("Helvetica-Bold", 6.5); c.setFillColor(black); c.drawRightString(nx+NW-4*mm, ny, vt)
+        ny -= 4*mm; c.setStrokeColor(rule); c.setLineWidth(0.2)
+        c.line(nx+5*mm, ny+0.5*mm, nx+NW-4*mm, ny+0.5*mm); ny -= 2*mm
 
-    draw_footer(c,W,1,2,date_str,time_str,navy,slate)
+    draw_footer(c, W, 1, 2, date_str, time_str, navy, slate)
     c.showPage()
 
-    # ═══════════════════
-    # PAGE 2 — Recommendations + Next Steps + Disclaimer
-    # ═══════════════════
-    c.setFillColor(pg_bg); c.rect(0,0,W,H,fill=1,stroke=0)
-    draw_header(c,W,H,HDR_H,white,navy,accent,slt_lt)
+    # ── PAGE 2 ────────────────────────────────────────────────────
+    c.setFillColor(pg_bg); c.rect(0, 0, W, H, fill=1, stroke=0)
+    draw_header(c, W, H, HDR_H, white, navy, accent, slt_lt)
 
-    y=H-HDR_H-5*mm
-    c.setFont("Helvetica-Bold",10); c.setFillColor(navy)
-    c.drawString(18*mm,y,"RADIOLOGY REPORT — CONTINUED")
-    c.setFont("Helvetica",7.5); c.setFillColor(slate)
-    c.drawRightString(W-18*mm,y,f"Report ID: {rep_id}")
-    y-=3*mm; c.setStrokeColor(rule); c.setLineWidth(0.8)
-    c.line(18*mm,y,W-18*mm,y); y-=12*mm
+    y = H - HDR_H - 5*mm
+    c.setFont("Helvetica-Bold", 10); c.setFillColor(navy)
+    c.drawString(18*mm, y, "RADIOLOGY REPORT — CONTINUED")
+    c.setFont("Helvetica", 7.5); c.setFillColor(slate)
+    c.drawRightString(W-18*mm, y, f"Report ID: {rep_id}")
+    y -= 3*mm; c.setStrokeColor(rule); c.setLineWidth(0.8)
+    c.line(18*mm, y, W-18*mm, y); y -= 12*mm
 
-    # Clinical Recommendations — each item word-wrapped with generous spacing
-    y=sec_head(c,18*mm,y,"CLINICAL RECOMMENDATIONS",navy)
-
-    # Calculate total height dynamically
-    REC_ITEM_BASE=14*mm
-    total_rec_h=8*mm
+    y = sec_head(c, 18*mm, y, "CLINICAL RECOMMENDATIONS", navy)
+    REC_ITEM_BASE = 14*mm
+    total_rec_h   = 8*mm
     for item in rec_items:
-        ls=wrap_text(c,item,W-36*mm-18*mm,"Helvetica",8.5)
-        total_rec_h+=max(REC_ITEM_BASE,len(ls)*5.5*mm+6*mm)
+        ls = wrap_text(c, item, W-36*mm-18*mm, "Helvetica", 8.5)
+        total_rec_h += max(REC_ITEM_BASE, len(ls)*5.5*mm + 6*mm)
 
-    c.setFillColor(rb); c.roundRect(18*mm,y-total_rec_h,W-36*mm,total_rec_h,4,fill=1,stroke=0)
+    c.setFillColor(rb); c.roundRect(18*mm, y-total_rec_h, W-36*mm, total_rec_h, 4, fill=1, stroke=0)
     c.setStrokeColor(rd); c.setLineWidth(0.5)
-    c.roundRect(18*mm,y-total_rec_h,W-36*mm,total_rec_h,4,fill=0,stroke=1)
-    c.setFillColor(rc); c.rect(18*mm,y-total_rec_h,3.5*mm,total_rec_h,fill=1,stroke=0)
+    c.roundRect(18*mm, y-total_rec_h, W-36*mm, total_rec_h, 4, fill=0, stroke=1)
+    c.setFillColor(rc); c.rect(18*mm, y-total_rec_h, 3.5*mm, total_rec_h, fill=1, stroke=0)
 
-    ry=y-7*mm
-    for i,item in enumerate(rec_items,1):
-        ls=wrap_text(c,item,W-36*mm-18*mm,"Helvetica",8.5)
-        c.setFont("Helvetica-Bold",9); c.setFillColor(rc)
-        c.drawString(24*mm,ry,f"{i}.")
-        c.setFont("Helvetica",8.5); c.setFillColor(black)
-        for li,ln in enumerate(ls):
-            c.drawString(31*mm,ry-li*5.5*mm,ln)
-        ry-=max(REC_ITEM_BASE,len(ls)*5.5*mm+6*mm)
+    ry = y - 7*mm
+    for i, item in enumerate(rec_items, 1):
+        ls = wrap_text(c, item, W-36*mm-18*mm, "Helvetica", 8.5)
+        c.setFont("Helvetica-Bold", 9); c.setFillColor(rc)
+        c.drawString(24*mm, ry, f"{i}.")
+        c.setFont("Helvetica", 8.5); c.setFillColor(black)
+        for li, ln in enumerate(ls):
+            c.drawString(31*mm, ry-li*5.5*mm, ln)
+        ry -= max(REC_ITEM_BASE, len(ls)*5.5*mm + 6*mm)
 
-    y-=total_rec_h+14*mm
-
-    # Next Steps — 3 cards side by side
-    y=sec_head(c,18*mm,y,"NEXT STEPS",navy)
-    steps=[
-        ("🏥","Visit a Healthcare Provider",
+    y -= total_rec_h + 14*mm
+    y = sec_head(c, 18*mm, y, "NEXT STEPS", navy)
+    steps = [
+        ("🏥", "Visit a Healthcare Provider",
          "Take this report to your nearest hospital, clinic, or physician for professional evaluation and confirmation."),
-        ("🔬","Await Clinical Diagnosis",
+        ("🔬", "Await Clinical Diagnosis",
          "This AI result is a screening aid only. Your doctor will confirm through physical examination and additional tests."),
-        ("📋","Keep Your Records",
+        ("📋", "Keep Your Records",
          "Store this report with your medical documents. The Report ID supports traceability and follow-up discussions."),
     ]
-    SW=(W-36*mm-8*mm)/3; sx=18*mm; SH=32*mm
-    for icon,title,desc in steps:
-        c.setFillColor(shade); c.roundRect(sx,y-SH,SW,SH,4,fill=1,stroke=0)
+    SW = (W-36*mm-8*mm)/3; sx = 18*mm; SH = 32*mm
+    for icon, title, desc in steps:
+        c.setFillColor(shade); c.roundRect(sx, y-SH, SW, SH, 4, fill=1, stroke=0)
         c.setStrokeColor(rule); c.setLineWidth(0.4)
-        c.roundRect(sx,y-SH,SW,SH,4,fill=0,stroke=1)
-        c.setFillColor(navy_lt); c.rect(sx,y-SH,SW,2.5*mm,fill=1,stroke=0)
-        c.setFont("Helvetica-Bold",14); c.setFillColor(navy); c.drawString(sx+5*mm,y-9*mm,icon)
-        c.setFont("Helvetica-Bold",7.5); c.setFillColor(navy); c.drawString(sx+5*mm,y-15*mm,title)
-        dls=wrap_text(c,desc,SW-10*mm,"Helvetica",7)
-        c.setFont("Helvetica",7); c.setFillColor(slate)
-        for di,dl in enumerate(dls):
-            c.drawString(sx+5*mm,y-21*mm-di*4.5*mm,dl)
-        sx+=SW+4*mm
+        c.roundRect(sx, y-SH, SW, SH, 4, fill=0, stroke=1)
+        c.setFillColor(navy_lt); c.rect(sx, y-SH, SW, 2.5*mm, fill=1, stroke=0)
+        c.setFont("Helvetica-Bold", 14); c.setFillColor(navy); c.drawString(sx+5*mm, y-9*mm, icon)
+        c.setFont("Helvetica-Bold", 7.5); c.setFillColor(navy); c.drawString(sx+5*mm, y-15*mm, title)
+        dls = wrap_text(c, desc, SW-10*mm, "Helvetica", 7)
+        c.setFont("Helvetica", 7); c.setFillColor(slate)
+        for di, dl in enumerate(dls):
+            c.drawString(sx+5*mm, y-21*mm-di*4.5*mm, dl)
+        sx += SW + 4*mm
 
-    y-=SH+14*mm
-
-    # Disclaimer
-    DH=24*mm
-    c.setFillColor(warn_bg); c.roundRect(18*mm,y-DH,W-36*mm,DH,4,fill=1,stroke=0)
+    y -= SH + 14*mm
+    DH = 24*mm
+    c.setFillColor(warn_bg); c.roundRect(18*mm, y-DH, W-36*mm, DH, 4, fill=1, stroke=0)
     c.setStrokeColor(warn_bdr); c.setLineWidth(0.5)
-    c.roundRect(18*mm,y-DH,W-36*mm,DH,4,fill=0,stroke=1)
-    c.setFillColor(warn_bdr); c.rect(18*mm,y-DH,3.5*mm,DH,fill=1,stroke=0)
-    c.setFont("Helvetica-Bold",7.5); c.setFillColor(hex_to_rl("8a6200"))
-    c.drawString(25*mm,y-6*mm,"IMPORTANT DISCLAIMER")
-    c.setFont("Helvetica",7.5); c.setFillColor(hex_to_rl("5a4400"))
-    disc=[
+    c.roundRect(18*mm, y-DH, W-36*mm, DH, 4, fill=0, stroke=1)
+    c.setFillColor(warn_bdr); c.rect(18*mm, y-DH, 3.5*mm, DH, fill=1, stroke=0)
+    c.setFont("Helvetica-Bold", 7.5); c.setFillColor(hex_to_rl("8a6200"))
+    c.drawString(25*mm, y-6*mm, "IMPORTANT DISCLAIMER")
+    c.setFont("Helvetica", 7.5); c.setFillColor(hex_to_rl("5a4400"))
+    disc = [
         "This report is generated by an AI-assisted screening tool for academic and research purposes only.",
         "It does NOT constitute a medical diagnosis or replace the advice of a qualified physician or radiologist.",
         "All findings must be reviewed by a licensed clinician before any clinical decision is made.",
-        "Bells University of Technsology assumes no liability for clinical decisions based on this report.",
+        "Bells University of Technology assumes no liability for clinical decisions based on this report.",
     ]
-    for di,dl in enumerate(disc):
-        c.drawString(25*mm,y-12*mm-di*4.5*mm,dl)
+    for di, dl in enumerate(disc):
+        c.drawString(25*mm, y-12*mm-di*4.5*mm, dl)
 
-    draw_footer(c,W,2,2,date_str,time_str,navy,slate)
+    draw_footer(c, W, 2, 2, date_str, time_str, navy, slate)
     c.save(); buf.seek(0)
     return buf
 
 
-# ── Sidebar ───────────────────────────────────────────────────────
+# ══════════════════════════════════════════════════════
+# SIDEBAR
+# ══════════════════════════════════════════════════════
 with st.sidebar:
     st.markdown(f"""
     <div class='brand-wrap'>
@@ -933,7 +1006,7 @@ with st.sidebar:
     <hr style='border-color:{hr_color};margin:0 0 1rem 0;'>
     """, unsafe_allow_html=True)
 
-    page = st.radio("", ["Analyze","PUMA Insights","About"], label_visibility="hidden")
+    page = st.radio("", ["Analyze", "PUMA Insights", "About"], label_visibility="hidden")
 
     st.markdown(f"<hr style='border-color:{hr_color};margin:1.2rem 0;'>", unsafe_allow_html=True)
     st.button(f"{toggle_icon}  {toggle_label}", on_click=toggle_theme)
@@ -957,10 +1030,10 @@ with st.sidebar:
 model, bundle = load_puma_model()
 
 
-# ═══════════════════════════════════════════════
+# ══════════════════════════════════════════════════════
 # PAGE: Analyze
-# ═══════════════════════════════════════════════
-if page=="Analyze":
+# ══════════════════════════════════════════════════════
+if page == "Analyze":
     st.markdown(f"""
     <div class='page-hero'>
         <div class='hero-badge'><div class='hero-dot'></div>PUMA-CNN Active</div>
@@ -981,31 +1054,38 @@ if page=="Analyze":
         st.stop()
 
     st.markdown("<div class='section-label'>Patient Details</div>", unsafe_allow_html=True)
-    c1,c2,c3=st.columns([1,1,1.2])
-    with c1: first=st.text_input("First Name",placeholder="e.g. Olusegun")
-    with c2: last =st.text_input("Last Name", placeholder="e.g. Peters")
-    with c3: email=st.text_input("Email Address",placeholder="e.g. patient@hospital.com")
+    c1, c2, c3 = st.columns([1, 1, 1.2])
+    with c1: first = st.text_input("First Name",     placeholder="e.g. Olusegun")
+    with c2: last  = st.text_input("Last Name",      placeholder="e.g. Peters")
+    with c3: email = st.text_input("Email Address",  placeholder="e.g. patient@hospital.com")
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("<div class='section-label'>Upload X-Ray Image</div>", unsafe_allow_html=True)
-    uploaded=st.file_uploader("",type=["png","jpg","jpeg"],label_visibility="collapsed")
+    uploaded = st.file_uploader("", type=["png", "jpg", "jpeg"], label_visibility="collapsed")
 
     if uploaded:
-        img_pil=Image.open(uploaded)
-        is_valid,validity_score,invalid_reason=check_xray_validity(img_pil)
+        img_pil = Image.open(uploaded)
+
+        # ── Run improved validity check ───────────────────────────
+        is_valid, validity_score, invalid_reason, validity_details = check_xray_validity(img_pil)
 
         if not is_valid:
+            # ── Rejection UI ──────────────────────────────────────
             st.markdown(f"""
             <div class='warning-banner'>
-                <h4>⚠ Invalid Image Detected</h4>
-                <p>{invalid_reason} Please upload a proper grayscale chest X-ray (PA or AP view).</p>
+                <h4>⚠ Image Rejected — Not a Valid Chest X-Ray</h4>
+                <p><strong>Reason:</strong> {invalid_reason}<br>
+                Please upload a proper grayscale frontal chest X-ray (PA or AP view).
+                Colour photographs, screenshots, or unrelated medical images cannot be analysed.</p>
             </div>
             """, unsafe_allow_html=True)
-            cp,cm=st.columns([1,2])
+
+            cp, cm = st.columns([1, 2])
             with cp:
-                st.markdown("<div class='xray-wrap'>",unsafe_allow_html=True)
-                st.image(img_pil,use_column_width=True)
-                st.markdown("</div>",unsafe_allow_html=True)
+                st.markdown("<div class='xray-wrap'>", unsafe_allow_html=True)
+                st.image(img_pil, use_column_width=True)
+                st.markdown("</div>", unsafe_allow_html=True)
+
             with cm:
                 st.markdown(f"""
                 <div style='padding:1.8rem;'>
@@ -1022,26 +1102,70 @@ if page=="Analyze":
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
-        else:
-            with st.spinner("Analyzing with PUMA-CNN…"):
-                img_size=bundle["img_size"] if bundle else 224
-                img_arr=preprocess_image(img_pil,img_size)
-                label,conf,probs=predict(model,img_arr)
-                rec_type,rec_title,rec_items=get_recommendations(label,conf)
 
-            st.markdown("<br>",unsafe_allow_html=True)
-            ci,cr=st.columns([1,1.15])
+                # ── Show per-criterion breakdown ──────────────────
+                def status_badge(s):
+                    if s == "PASS":
+                        return "<span class='validity-pass'>✔ PASS</span>"
+                    elif s == "FAIL":
+                        return "<span class='validity-fail'>✘ FAIL</span>"
+                    return "<span class='validity-warn'>⚠ WARN</span>"
+
+                rows_html = "".join([
+                    f"<div class='validity-row'><span>{label_}</span>{status_badge(val_)}</div>"
+                    for label_, key_ in [
+                        ("Grayscale dominance",    "color_diff_status"),
+                        ("Brightness range",        "brightness_status"),
+                        ("Tonal spread",            "tonal_status"),
+                        ("Aspect ratio",            "ratio_status"),
+                        ("Dark-pixel ratio",        "dark_ratio_status"),
+                        ("Colour saturation",       "saturation_status"),
+                        ("Edge / structural detail","edge_status"),
+                    ]
+                    for val_ in [validity_details.get(key_, "PASS")]
+                ])
+                st.markdown(f"""
+                <div class='validity-panel'>
+                    <h5>Validity Criteria Breakdown</h5>
+                    {rows_html}
+                </div>
+                """, unsafe_allow_html=True)
+
+        else:
+            # ── Valid image: run inference ─────────────────────────
+            with st.spinner("Analysing with PUMA-CNN…"):
+                img_size = bundle["img_size"] if bundle else 224
+                img_arr  = preprocess_image(img_pil, img_size)
+                label, conf, probs = predict(model, img_arr)
+                rec_type, rec_title, rec_items = get_recommendations(label, conf)
+
+            st.markdown("<br>", unsafe_allow_html=True)
+            ci, cr = st.columns([1, 1.15])
 
             with ci:
-                st.markdown("<div class='section-label'>Original X-Ray</div>",unsafe_allow_html=True)
-                st.markdown("<div class='xray-wrap'>",unsafe_allow_html=True)
-                st.image(img_pil,use_column_width=True)
-                st.markdown("</div>",unsafe_allow_html=True)
+                st.markdown("<div class='section-label'>Original X-Ray</div>", unsafe_allow_html=True)
+                st.markdown("<div class='xray-wrap'>", unsafe_allow_html=True)
+                st.image(img_pil, use_column_width=True)
+                st.markdown("</div>", unsafe_allow_html=True)
+
+                # Show validity score for accepted images too
+                st.markdown(f"""
+                <div style='margin-top:0.8rem;padding:8px 14px;background:{badge_bg};
+                     border:1px solid {badge_bdr};border-radius:8px;font-size:0.75rem;
+                     color:{hero_accent};font-weight:600;text-align:center;'>
+                    ✔ X-Ray Validity Score: {validity_score}/100
+                </div>
+                """, unsafe_allow_html=True)
 
             with cr:
-                st.markdown("<div class='section-label'>Diagnosis Result</div>",unsafe_allow_html=True)
-                icon   ="🔴" if label=="PNEUMONIA" else ("🟢" if label=="NORMAL" else "🟡")
-                verdict="Pneumonia Detected" if label=="PNEUMONIA" else ("Normal" if label=="NORMAL" else "Uncertain")
+                st.markdown("<div class='section-label'>Diagnosis Result</div>", unsafe_allow_html=True)
+
+                icon    = "🔴" if label == "PNEUMONIA" else ("🟢" if label == "NORMAL" else "🟡")
+                verdict = (
+                    "Pneumonia Detected" if label == "PNEUMONIA"
+                    else "Normal"         if label == "NORMAL"
+                    else "Uncertain"
+                )
 
                 st.markdown(f"""
                 <div class='result-card {rec_type}'>
@@ -1054,7 +1178,8 @@ if page=="Analyze":
                 </div>
                 """, unsafe_allow_html=True)
 
-                p_pct=probs["PNEUMONIA"]*100; n_pct=probs["NORMAL"]*100
+                p_pct = probs["PNEUMONIA"] * 100
+                n_pct = probs["NORMAL"]    * 100
                 st.markdown(f"""
                 <div class='prob-section'>
                     <div class='prob-row'>
@@ -1078,18 +1203,25 @@ if page=="Analyze":
                 </div>
                 """, unsafe_allow_html=True)
 
-                st.markdown("<br>",unsafe_allow_html=True)
+                st.markdown("<br>", unsafe_allow_html=True)
                 if first.strip() and last.strip() and email.strip():
-                    pdf_data=build_pdf(first.strip(),last.strip(),email.strip(),
-                                       label,conf,probs,img_pil,bundle,rec_items)
-                    fname=f"PneumoScan_{last.strip()}_{datetime.datetime.now().strftime('%Y%m%d')}.pdf"
-                    st.download_button("⬇  Download PDF Report",data=pdf_data,file_name=fname,mime="application/pdf")
+                    pdf_data = build_pdf(
+                        first.strip(), last.strip(), email.strip(),
+                        label, conf, probs, img_pil, bundle, rec_items
+                    )
+                    fname = f"PneumoScan_{last.strip()}_{datetime.datetime.now().strftime('%Y%m%d')}.pdf"
+                    st.download_button(
+                        "⬇  Download PDF Report",
+                        data=pdf_data, file_name=fname, mime="application/pdf"
+                    )
                 else:
-                    st.markdown(f"<div class='info-hint'>ℹ Fill in patient details above to enable PDF report download.</div>",
-                                unsafe_allow_html=True)
+                    st.markdown(
+                        f"<div class='info-hint'>ℹ Fill in patient details above to enable PDF report download.</div>",
+                        unsafe_allow_html=True
+                    )
 
-            st.markdown("<br>",unsafe_allow_html=True)
-            recs_html="".join([
+            st.markdown("<br>", unsafe_allow_html=True)
+            recs_html = "".join([
                 f"<div class='rec-item'><div class='rec-dot'></div><div>{item}</div></div>"
                 for item in rec_items
             ])
@@ -1101,10 +1233,10 @@ if page=="Analyze":
             """, unsafe_allow_html=True)
 
 
-# ═══════════════════════════════════════════════
+# ══════════════════════════════════════════════════════
 # PAGE: PUMA Insights
-# ═══════════════════════════════════════════════
-elif page=="PUMA Insights":
+# ══════════════════════════════════════════════════════
+elif page == "PUMA Insights":
     st.markdown(f"""
     <div class='page-hero'>
         <div class='hero-badge'><div class='hero-dot'></div>Optimization Results</div>
@@ -1115,33 +1247,35 @@ elif page=="PUMA Insights":
     """, unsafe_allow_html=True)
 
     if bundle is None:
-        st.markdown(f"<p style='color:{body_text};'>Bundle file not found. Run training to generate <code>puma_model_bundle.pkl</code>.</p>",
-                    unsafe_allow_html=True)
+        st.markdown(
+            f"<p style='color:{body_text};'>Bundle file not found. Run training to generate "
+            f"<code>puma_model_bundle.pkl</code>.</p>",
+            unsafe_allow_html=True
+        )
         st.stop()
 
-    m =bundle.get("metrics",{})
-    bp=bundle.get("best_params",{})
+    m  = bundle.get("metrics",      {})
+    bp = bundle.get("best_params",  {})
 
-    # Performance stats
-    st.markdown("<div class='section-label'>Model Performance</div>",unsafe_allow_html=True)
-    c1,c2,c3,c4=st.columns(4)
-    for col,(lbl,key) in zip([c1,c2,c3,c4],[
-        ("Accuracy","accuracy"),("Precision","precision"),
-        ("Recall","recall"),("F1 Score","f1_score")
+    st.markdown("<div class='section-label'>Model Performance</div>", unsafe_allow_html=True)
+    c1, c2, c3, c4 = st.columns(4)
+    for col, (lbl, key) in zip([c1, c2, c3, c4], [
+        ("Accuracy",  "accuracy"),
+        ("Precision", "precision"),
+        ("Recall",    "recall"),
+        ("F1 Score",  "f1_score"),
     ]):
         col.markdown(f"""
         <div class='stat-block'>
-            <div class='stat-num'>{m.get(key,0)*100:.1f}%</div>
+            <div class='stat-num'>{m.get(key, 0)*100:.1f}%</div>
             <div class='stat-label'>{lbl}</div>
         </div>
         """, unsafe_allow_html=True)
 
-    st.markdown("<br>",unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
 
-
-    # Mechanism deep dive
-    st.markdown("<div class='section-label'>Mechanism Deep Dive</div>",unsafe_allow_html=True)
-    r1,r2=st.columns(2)
+    st.markdown("<div class='section-label'>Mechanism Deep Dive</div>", unsafe_allow_html=True)
+    r1, r2 = st.columns(2)
     with r1:
         st.markdown("""
         <div class='puma-card'>
@@ -1174,10 +1308,10 @@ elif page=="PUMA Insights":
         """, unsafe_allow_html=True)
 
 
-# ═══════════════════════════════════════════════
+# ══════════════════════════════════════════════════════
 # PAGE: About
-# ═══════════════════════════════════════════════
-elif page=="About":
+# ══════════════════════════════════════════════════════
+elif page == "About":
     st.markdown(f"""
     <div class='page-hero'>
         <div class='hero-badge'><div class='hero-dot'></div>Project Documentation</div>
@@ -1187,7 +1321,7 @@ elif page=="About":
     <div class='hero-rule'></div><br>
     """, unsafe_allow_html=True)
 
-    st.markdown("<div class='section-label'>Project Overview</div>",unsafe_allow_html=True)
+    st.markdown("<div class='section-label'>Project Overview</div>", unsafe_allow_html=True)
     st.markdown("""
     <div class='about-block'>
         <h4>Development of a PUMA-Optimized CNN for Pneumonia Detection from Chest X-Ray</h4>
@@ -1198,9 +1332,9 @@ elif page=="About":
     </div>
     """, unsafe_allow_html=True)
 
-    r1,r2=st.columns(2)
+    r1, r2 = st.columns(2)
     with r1:
-        st.markdown("<div class='section-label'>Dataset</div>",unsafe_allow_html=True)
+        st.markdown("<div class='section-label'>Dataset</div>", unsafe_allow_html=True)
         st.markdown("""
         <div class='about-block'>
             <h4>Chest X-Ray Images (Pneumonia) — Kaggle</h4>
@@ -1209,7 +1343,7 @@ elif page=="About":
             Children's Medical Center. All images validated by expert physicians.</p>
         </div>
         """, unsafe_allow_html=True)
-        st.markdown("<div class='section-label'>Architecture</div>",unsafe_allow_html=True)
+        st.markdown("<div class='section-label'>Architecture</div>", unsafe_allow_html=True)
         st.markdown("""
         <div class='about-block'>
             <h4>CNN + PUMA Hybrid Model</h4>
@@ -1219,7 +1353,7 @@ elif page=="About":
         </div>
         """, unsafe_allow_html=True)
     with r2:
-        st.markdown("<div class='section-label'>Training Pipeline</div>",unsafe_allow_html=True)
+        st.markdown("<div class='section-label'>Training Pipeline</div>", unsafe_allow_html=True)
         st.markdown("""
         <div class='about-block'>
             <h4>Preprocessing and Augmentation</h4>
@@ -1228,7 +1362,7 @@ elif page=="About":
             and ReduceLROnPlateau callbacks.</p>
         </div>
         """, unsafe_allow_html=True)
-        st.markdown("<div class='section-label'>Evaluation</div>",unsafe_allow_html=True)
+        st.markdown("<div class='section-label'>Evaluation</div>", unsafe_allow_html=True)
         st.markdown("""
         <div class='about-block'>
             <h4>Performance Metrics</h4>
@@ -1237,13 +1371,13 @@ elif page=="About":
         </div>
         """, unsafe_allow_html=True)
 
-  
-
-    st.markdown("<br><hr>",unsafe_allow_html=True)
+    st.markdown("<br><hr>", unsafe_allow_html=True)
     st.markdown(f"""
-    <div style='text-align:center;padding:1.5rem 0;color:{footer_color};font-size:0.8rem;line-height:2.2;font-weight:400;'>
+    <div style='text-align:center;padding:1.5rem 0;color:{footer_color};
+         font-size:0.8rem;line-height:2.2;font-weight:400;'>
         Department of Computer Science &amp; Information Technology<br>
         College of Natural &amp; Applied Sciences, Bells University of Technology, Ota<br>
-        <span style='font-size:0.72rem;'>Submitted in partial fulfillment of the requirements for the award of B.Tech (Hons) in Computer Science</span>
+        <span style='font-size:0.72rem;'>Submitted in partial fulfillment of the requirements
+        for the award of B.Tech (Hons) in Computer Science</span>
     </div>
     """, unsafe_allow_html=True)
